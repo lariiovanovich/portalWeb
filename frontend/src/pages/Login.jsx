@@ -1,72 +1,74 @@
 // frontend/src/pages/Login.jsx
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useAuth } from '../contexts/AuthContext.jsx' // <-- 1. Importe o useAuth
+import { useAuth } from '../contexts/AuthContext.jsx' 
 import './Login.css'
 import logo from '../assets/FknGreenLogo300w.png'
 
 function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [error, setError] = useState('') // <-- 2. Estado para mensagem de erro
+  const [error, setError] = useState('')
   
-  const { login } = useAuth() // <-- 3. Pegue a função login do contexto
+  const { login } = useAuth() 
   const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    setError('') // Limpa erros anteriores
+    setError('') 
 
-    // Chama a função de login do Contexto
     const sucesso = await login(email, password)
 
     if (sucesso) {
-      navigate('/dashboard') // Se deu certo, entra
+      navigate('/dashboard') 
     } else {
-      setError('Credenciais inválidas. Tente "admin" e "admin".') // Se deu errado, avisa
+      setError('Credenciais inválidas. Tente "admin" e "admin".') 
     }
   }
 
   return (
-    <div className="login-container-fullscreen">
-      <div className="login-branding">
-        <img src={logo} alt="Logo FKN" className="login-logo" />
-      </div>
+    <div className="login-page">
+      
+      <header className="login-header">
+        <img src={logo} alt="Logo FKN" className="header-logo-img" />
+      </header>
 
-      <div className="login-form-wrapper">
-        <form className="login-form" onSubmit={handleSubmit}>
-          <h2>Login do Portal</h2>
+      <main className="login-body">
+        {/* Adicionado um wrapper para o título e o formulário */}
+        <div className="login-card"> {/* Nova div para agrupar título e form */}
+          <h2 className="login-title">Login do Portal</h2> {/* H2 com nova classe */}
 
-          {/* 4. Exibe a mensagem de erro se existir */}
-          {error && <div className="error-message">{error}</div>}
+          <form className="login-form" onSubmit={handleSubmit}>
+            {error && <div className="error-message">{error}</div>}
 
-          <div className="input-group">
-            <label htmlFor="email">Usuário</label>
-            <input
-              type="text" 
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
+            <div className="input-group">
+              <label htmlFor="email">Usuário</label>
+              <input
+                type="text"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
 
-          <div className="input-group">
-            <label htmlFor="password">Senha</label>
-            <input
-              type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </div>
+            <div className="input-group">
+              <label htmlFor="password">Senha</label>
+              <input
+                type="password"
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
 
-          <button type="submit" className="login-button">
-            Entrar
-          </button>
-        </form>
-      </div>
+            <button type="submit" className="login-button">
+              Entrar
+            </button>
+          </form>
+        </div>
+      </main>
     </div>
   )
 }

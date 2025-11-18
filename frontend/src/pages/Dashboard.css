@@ -1,0 +1,179 @@
+/* --- ESTILOS ADICIONAIS PARA SELEÇÃO E LISTA DE OS --- */
+
+/* Estilo para quando um card de contrato estiver selecionado */
+.contrato-card.card-selecionado {
+  background-color: #e6ffe6; /* Fundo mais claro para indicar seleção */
+  border-left-width: 8px; /* Borda mais grossa */
+  box-shadow: 0 4px 20px rgba(40, 167, 69, 0.3); /* Sombra na cor verde */
+}
+
+/* Título da seção de OS */
+.os-section-title {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #28a745;
+    color: #333;
+}
+
+/* Container da lista de detalhes de OS */
+.os-list-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Card individual de OS */
+.os-card-item {
+    background: #ffffff;
+    padding: 1rem 1.5rem;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eee;
+}
+
+.os-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.os-number {
+    font-weight: bold;
+    color: #28a745;
+}
+
+.os-description {
+    color: #555;
+    margin-bottom: 0.8rem;
+}
+
+.os-footer span {
+    font-size: 0.9rem;
+    color: #777;
+    margin-right: 1.5rem;
+}
+
+/* Estilos para Status Tags (Simulação de cores) */
+.os-status {
+    padding: 0.3rem 0.6rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: white;
+}
+
+.status-emexecução {
+    background-color: #007bff; /* Azul */
+}
+
+.status-concluída {
+    background-color: #28a745; /* Verde */
+}
+
+.status-aguardandoaprovação {
+    background-color: #ffc107; /* Amarelo */
+    color: #333;
+}
+
+.status-agendada {
+    background-color: #6c757d; /* Cinza */
+}
+
+.os-placeholder {
+    padding: 2rem;
+    text-align: center;
+    color: #999;
+    background-color: #fff;
+    border-radius: 6px;
+}
+
+.contratos-list {
+  display: grid; /* Importante: Ativa o layout em grade */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* 280px mínimo, expande se tiver espaço */
+  gap: 1.5rem; /* Espaço entre os cards */
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+.contrato-card {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column; /* Conteúdo interno empilhado: código/nome em cima, botões embaixo */
+  justify-content: space-between; /* Empurra os botões para a base do card */
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  border-left: 5px solid #28a745; /* Linha verde de destaque */
+  cursor: pointer;
+  min-height: 120px; /* Garante altura mínima para alinhamento */
+}
+
+.contrato-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+/* Estilo para quando um card de contrato estiver selecionado */
+.contrato-card.card-selecionado {
+  background-color: #e6ffe6; /* Fundo verde claro para seleção */
+  border-left-width: 8px; /* Borda mais grossa */
+  box-shadow: 0 4px 20px rgba(40, 167, 69, 0.3); 
+}
+
+.contrato-code {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 0.2rem;
+}
+
+.contrato-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.contrato-actions {
+  display: flex; /* Os botões ficam lado a lado */
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  border-top: 1px solid #eee;
+  padding-top: 0.5rem;
+}
+
+/* --- ESTILOS DOS BOTÕES --- */
+.button-main, .button-secondary {
+  padding: 0.6rem 1rem;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-size: 0.9rem;
+  flex: 1; /* Ocupam o mesmo espaço horizontalmente */
+  text-align: center;
+}
+
+.button-main {
+  background-color: #28a745; /* Verde */
+  color: white;
+  border: none;
+}
+
+.button-main:hover {
+  background-color: #218838;
+}
+
+.button-secondary {
+  background-color: #f0f2f5; /* Cinza Claro */
+  color: #555;
+  border: 1px solid #ddd;
+}
+
+.button-secondary:hover {
+  background-color: #e2e4e7;
+}
