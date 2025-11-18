@@ -1,0 +1,19 @@
+/* src/components/layout/MainLayout.css */
+
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  background-color: #f0f2f5; /* Fundo CINZA claro para o app */
+}
+
+.app-content {
+  flex: 1; /* Ocupa todo o espaço restante */
+  overflow-y: auto; /* Permite scroll SÓ no conteúdo, não na página inteira */
+  padding: 2rem; /* Espaçamento interno para o conteúdo */
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
